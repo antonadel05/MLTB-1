@@ -168,8 +168,8 @@ def get_readable_message():
             msg += "\n\n"
             if STATUS_LIMIT is not None and index == STATUS_LIMIT:
                 break
-        bmsg = f"<b>ℂℙ𝕌:</b> {cpu_percent()}% | <b>FREE:</b> {get_readable_file_size(disk_usage(DOWNLOAD_DIR).free)}"
-        bmsg += f"\n<b>ℝ𝔸𝕄:</b> {virtual_memory().percent}% | <b>UPTIME:</b> {get_readable_time(time() - botStartTime)}"
+        bmsg = f"<b>ℂℙ𝕌:</b> {cpu_percent()}% | <b>𝔽ℝ𝔼𝔼:</b> {get_readable_file_size(disk_usage(DOWNLOAD_DIR).free)}"
+        bmsg += f"\n<b>ℝ𝔸𝕄:</b> {virtual_memory().percent}% | <b>𝕌ℙ𝕋𝕀𝕄𝔼:</b> {get_readable_time(time() - botStartTime)}"
         dlspeed_bytes = 0
         upspeed_bytes = 0
         for download in list(download_dict.values()):
@@ -184,9 +184,9 @@ def get_readable_message():
                     upspeed_bytes += float(spd.split('K')[0]) * 1024
                 elif 'MB/s' in spd:
                     upspeed_bytes += float(spd.split('M')[0]) * 1048576
-        bmsg += f"\n<b>𝔻𝕝:</b> {get_readable_file_size(dlspeed_bytes)}/s | <b>UL:</b> {get_readable_file_size(upspeed_bytes)}/s"
+        bmsg += f"\n<b>𝔻𝕝:</b> {get_readable_file_size(dlspeed_bytes)}/s | <b>𝕌𝕃:</b> {get_readable_file_size(upspeed_bytes)}/s"
         if STATUS_LIMIT is not None and tasks > STATUS_LIMIT:
-            msg += f"<b>ℙ𝕒𝕘𝕖:</b> {PAGE_NO}/{pages} | <b>Tasks:</b> {tasks}\n"
+            msg += f"<b>ℙ𝕒𝕘𝕖:</b> {PAGE_NO}/{pages} | <b>𝕋𝕒𝕤𝕜𝕤:</b> {tasks}\n"
             buttons = ButtonMaker()
             buttons.sbutton("ℙ𝕣𝕖𝕧𝕚𝕠𝕦𝕤", "status pre")
             buttons.sbutton("ℕ𝕖𝕩𝕥", "status nex")
