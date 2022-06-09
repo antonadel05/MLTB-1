@@ -35,7 +35,7 @@ class MirrorStatus:
 
     
 PROGRESS_MAX_SIZE = 50 // 4
-PROGRESS_INCOMPLETE = ['○', '◔', '◐', '◕' '⬤']
+PROGRESS_INCOMPLETE = ['○', '◔', '◐', '◕']
 
 SIZE_UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
 
