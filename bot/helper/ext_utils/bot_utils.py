@@ -34,8 +34,8 @@ class MirrorStatus:
     STATUS_SEEDING = "𝕊𝕖𝕖𝕕𝕚𝕟𝕘...🌧"
 
     
-PROGRESS_MAX_SIZE = 100 // 8
-PROGRESS_INCOMPLETE = ['○', '○', '◔', '◔' '◐', '◐', '◕', '◕']
+PROGRESS_MAX_SIZE = 50 // 4
+PROGRESS_INCOMPLETE = ['○', '◔', '◐', '◕' '⬤']
 
 SIZE_UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
 
