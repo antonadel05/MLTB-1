@@ -44,22 +44,22 @@ def stats(update, context):
     mem_t = get_readable_file_size(memory.total)
     mem_a = get_readable_file_size(memory.available)
     mem_u = get_readable_file_size(memory.used)
-    stats = f'<b>ℂ𝕠𝕞𝕞𝕚𝕥 𝔻𝕒𝕥𝕖:</b> {last_commit}\n\n'\
-            f'<b>𝔹𝕠𝕥 𝕌𝕡𝕥𝕚𝕞𝕖:</b> {currentTime}\n'\
-            f'<b>𝕆𝕊 𝕌𝕡𝕥𝕚𝕞𝕖:</b> {osUptime}\n\n'\
-            f'<b>𝕋𝕠𝕥𝕒𝕝 𝔻𝕚𝕤𝕜 𝕊𝕡𝕒𝕔𝕖:</b> {total}\n'\
-            f'<b>𝕌𝕤𝕖𝕕:</b> {used} | <b>Free:</b> {free}\n\n'\
-            f'<b>𝕌𝕡𝕝𝕠𝕒𝕕:</b> {sent}\n'\
-            f'<b>𝔻𝕠𝕨𝕟𝕝𝕠𝕒𝕕:</b> {recv}\n\n'\
-            f'<b>ℂℙ𝕌:</b> {cpuUsage}%\n'\
-            f'<b>ℝ𝔸𝕄:</b> {mem_p}%\n'\
-            f'<b>𝔻𝕀𝕊𝕂:</b> {disk}%\n\n'\
-            f'<b>ℙ𝕙𝕪𝕤𝕚𝕔𝕒𝕝 ℂ𝕠𝕣𝕖𝕤:</b> {p_core}\n'\
-            f'<b>𝕋𝕠𝕥𝕒𝕝 ℂ𝕠𝕣𝕖𝕤:</b> {t_core}\n\n'\
-            f'<b>𝕊𝕎𝔸ℙ:</b> {swap_t} | <b>Used:</b> {swap_p}%\n'\
-            f'<b>𝕄𝕖𝕞𝕠𝕣𝕪 𝕋𝕠𝕥𝕒𝕝:</b> {mem_t}\n'\
-            f'<b>𝕄𝕖𝕞𝕠𝕣𝕪 𝔽𝕣𝕖𝕖:</b> {mem_a}\n'\
-            f'<b>𝕄𝕖𝕞𝕠𝕣𝕪 𝕌𝕤𝕖𝕕:</b> {mem_u}\n'
+    stats = f'<b>📅ℂ𝕠𝕞𝕞𝕚𝕥 𝔻𝕒𝕥𝕖:</b> {last_commit}\n\n'\
+            f'<b>🔺𝔹𝕠𝕥 𝕌𝕡𝕥𝕚𝕞𝕖:</b> {currentTime}\n'\
+            f'<b>🔻𝕆𝕊 𝕌𝕡𝕥𝕚𝕞𝕖:</b> {osUptime}\n\n'\
+            f'<b>💿𝕋𝕠𝕥𝕒𝕝 𝔻𝕚𝕤𝕜 𝕊𝕡𝕒𝕔𝕖:</b> {total}\n'\
+            f'<b>💾𝕌𝕤𝕖𝕕:</b> {used} | <b>Free:</b> {free}\n\n'\
+            f'<b>⏫𝕌𝕡𝕝𝕠𝕒𝕕:</b> {sent}\n'\
+            f'<b>⏬𝔻𝕠𝕨𝕟𝕝𝕠𝕒𝕕:</b> {recv}\n\n'\
+            f'<b>🌐ℂℙ𝕌:</b> {cpuUsage}%\n'\
+            f'<b>🦾ℝ𝔸𝕄:</b> {mem_p}%\n'\
+            f'<b>📀𝔻𝕀𝕊𝕂:</b> {disk}%\n\n'\
+            f'<b>🚟ℙ𝕙𝕪𝕤𝕚𝕔𝕒𝕝 ℂ𝕠𝕣𝕖𝕤:</b> {p_core}\n'\
+            f'<b>🖲𝕋𝕠𝕥𝕒𝕝 ℂ𝕠𝕣𝕖𝕤:</b> {t_core}\n\n'\
+            f'<b>💢𝕊𝕎𝔸ℙ:</b> {swap_t} | <b>Used:</b> {swap_p}%\n'\
+            f'<b>💾𝕄𝕖𝕞𝕠𝕣𝕪 𝕋𝕠𝕥𝕒𝕝:</b> {mem_t}\n'\
+            f'<b>🆓𝕄𝕖𝕞𝕠𝕣𝕪 𝔽𝕣𝕖𝕖:</b> {mem_a}\n'\
+            f'<b>📊𝕄𝕖𝕞𝕠𝕣𝕪 𝕌𝕤𝕖𝕕📊:</b> {mem_u}\n'
     sendMessage(stats, context.bot, update.message)
 
 
@@ -231,7 +231,7 @@ def main():
     if ospath.isfile(".restartmsg"):
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
-        bot.edit_message_text("Restarted successfully!", chat_id, msg_id)
+        bot.edit_message_text("ℝ𝕖𝕤𝕥𝕒𝕣𝕥𝕖𝕕 𝕤𝕦𝕔𝕔𝕖𝕤𝕤𝕗𝕦𝕝𝕝𝕪!𝕆𝕠𝕙 ℕ𝕖𝕖𝕕 𝕄𝕪 ℂ𝕠𝕗𝕗𝕖𝕖!", chat_id, msg_id)
         osremove(".restartmsg")
 
     start_handler = CommandHandler(BotCommands.StartCommand, start, run_async=True)
