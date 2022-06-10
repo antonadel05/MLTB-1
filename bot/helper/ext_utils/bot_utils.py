@@ -34,7 +34,7 @@ class MirrorStatus:
     STATUS_SEEDING = "𝕊𝕖𝕖𝕕𝕚𝕟𝕘...🌧"
 
     
-PROGRESS_MAX_SIZE = 100 // 10
+PROGRESS_MAX_SIZE = 100 // 9
 PROGRESS_INCOMPLETE = ['◔', '◔', '◑', '◑', '◑', '◕', '◕']
 
 SIZE_UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
@@ -285,4 +285,3 @@ def get_content_type(link: str) -> str:
         except:
             content_type = None
     return content_type
-
