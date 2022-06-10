@@ -195,12 +195,12 @@ class MirrorListener:
     def onUploadComplete(self, link: str, size, files, folders, typ, name: str):
         if not self.isPrivate and INCOMPLETE_TASK_NOTIFIER and DB_URI is not None:
             DbManger().rm_complete_task(self.message.link)
-        msg = f"<b>Name: </b><code>{escape(name)}</code>\n\n<b>Size: </b>{size}"
+        msg = f"<b>ℕ𝕒𝕞𝕖: </b><code>{escape(name)}</code>\n\n<b>𝕊𝕚𝕫𝕖: </b>{size}"
         if self.isLeech:
-            msg += f'\n<b>Total Files: </b>{folders}'
+            msg += f'\n<b>𝕋𝕠𝕥𝕒𝕝 𝔽𝕚𝕝𝕖𝕤👉: </b>{folders}'
             if typ != 0:
                 msg += f'\n<b>Corrupted Files: </b>{typ}'
-            msg += f'\n<b>cc: </b>{self.tag}\n\n'
+            msg += f'\n<b>𝕐𝕠𝕦𝕣 𝔻𝕠𝕨𝕟𝕝𝕠𝕒𝕕 𝕀𝕤 𝔻𝕠𝕟𝕖 𝔹𝕣𝕠 ℂ𝕝𝕚𝕔𝕜 𝕋𝕙𝕖 𝕃𝕚𝕟𝕜 𝔸𝕟𝕕 𝕊𝕦𝕡𝕡𝕠𝕣𝕥 𝕄𝕖 🖤 𝕌𝕡𝕝𝕠𝕒𝕕𝕖𝕕 𝔹𝕪 @seriesflixxx: </b>{self.tag}\n\n'
             if not files:
                 sendMessage(msg, self.bot, self.message)
             else:
@@ -214,14 +214,14 @@ class MirrorListener:
                 if fmsg != '':
                     sendMessage(msg + fmsg, self.bot, self.message)
         else:
-            msg += f'\n\n<b>Type: </b>{typ}'
+            msg += f'\n\n<b>𝕋𝕪𝕡𝕖: </b>{typ}'
             if ospath.isdir(f'{DOWNLOAD_DIR}{self.uid}/{name}'):
-                msg += f'\n<b>SubFolders: </b>{folders}'
-                msg += f'\n<b>Files: </b>{files}'
-            msg += f'\n\n<b>cc: </b>{self.tag}'
+                msg += f'\n<b>𝕊𝕦𝕓𝔽𝕠𝕝𝕕𝕖𝕣𝕤: </b>{folders}'
+                msg += f'\n<b>𝔽𝕚𝕝𝕖𝕤: </b>{files}'
+            msg += f'\n\n<b>𝕐𝕠𝕦𝕣 𝔻𝕠𝕨𝕟𝕝𝕠𝕒𝕕 𝕀𝕤 𝔻𝕠𝕟𝕖 𝔹𝕣𝕠 ℂ𝕝𝕚𝕔𝕜 𝕋𝕙𝕖 𝕃𝕚𝕟𝕜 𝔸𝕟𝕕 𝕊𝕦𝕡𝕡𝕠𝕣𝕥 𝕄𝕖 🖤 𝕌𝕡𝕝𝕠𝕒𝕕𝕖𝕕 𝔹𝕪 @seriesflixxx: </b>{self.tag}'
             buttons = ButtonMaker()
             link = short_url(link)
-            buttons.buildbutton("☁️ Drive Link", link)
+            buttons.buildbutton("☁️𝔻𝕣𝕚𝕧𝕖 𝕃𝕚𝕟𝕜☁️", link)
             LOGGER.info(f'Done Uploading {name}')
             if INDEX_URL is not None:
                 url_path = rutils.quote(f'{name}')
@@ -229,14 +229,14 @@ class MirrorListener:
                 if ospath.isdir(f'{DOWNLOAD_DIR}/{self.uid}/{name}'):
                     share_url += '/'
                     share_url = short_url(share_url)
-                    buttons.buildbutton("⚡ Index Link", share_url)
+                    buttons.buildbutton("⚡𝕀𝕟𝕕𝕖𝕩 𝕃𝕚𝕟𝕜⚡", share_url)
                 else:
                     share_url = short_url(share_url)
-                    buttons.buildbutton("⚡ Index Link", share_url)
+                    buttons.buildbutton("⚡𝕍𝕚𝕖𝕨 𝕃𝕚𝕟𝕜⚡", share_url)
                     if VIEW_LINK:
                         share_urls = f'{INDEX_URL}/{url_path}?a=view'
                         share_urls = short_url(share_urls)
-                        buttons.buildbutton("🌐 View Link", share_urls)
+                        buttons.buildbutton("🌐𝕍𝕚𝕖𝕨 𝕃𝕚𝕟𝕜🌐", share_urls)
             if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:
                 buttons.buildbutton(f"{BUTTON_FOUR_NAME}", f"{BUTTON_FOUR_URL}")
             if BUTTON_FIVE_NAME is not None and BUTTON_FIVE_URL is not None:
@@ -358,15 +358,15 @@ def _mirror(bot, message, isZip=False, extract=False, isQbit=False, isLeech=Fals
                 link = file.get_file().file_path
 
     if not is_url(link) and not is_magnet(link) and not ospath.exists(link):
-        help_msg = "<b>Send link along with command line:</b>"
+        help_msg = "<b>𝕊𝕖𝕟𝕕 𝕝𝕚𝕟𝕜 𝕒𝕝𝕠𝕟𝕘 𝕨𝕚𝕥𝕙 𝕔𝕠𝕞𝕞𝕒𝕟𝕕 𝕝𝕚𝕟𝕖:</b>"
         help_msg += "\n<code>/command</code> {link} |newname pswd: xx [zip/unzip]"
-        help_msg += "\n\n<b>By replying to link or file:</b>"
+        help_msg += "\n\n<b>𝔹𝕪 𝕣𝕖𝕡𝕝𝕪𝕚𝕟𝕘 𝕥𝕠 𝕝𝕚𝕟𝕜 𝕠𝕣 𝕗𝕚𝕝𝕖:</b>"
         help_msg += "\n<code>/command</code> |newname pswd: xx [zip/unzip]"
-        help_msg += "\n\n<b>Direct link authorization:</b>"
+        help_msg += "\n\n<b>𝔻𝕚𝕣𝕖𝕔𝕥 𝕝𝕚𝕟𝕜 𝕒𝕦𝕥𝕙𝕠𝕣𝕚𝕫𝕒𝕥𝕚𝕠𝕟:</b>"
         help_msg += "\n<code>/command</code> {link} |newname pswd: xx\nusername\npassword"
-        help_msg += "\n\n<b>Qbittorrent selection:</b>"
+        help_msg += "\n\n<b>ℚ𝕓𝕚𝕥𝕥𝕠𝕣𝕣𝕖𝕟𝕥 𝕤𝕖𝕝𝕖𝕔𝕥𝕚𝕠𝕟:</b>"
         help_msg += "\n<code>/qbcommand</code> <b>s</b> {link} or by replying to {file/link}"
-        help_msg += "\n\n<b>Multi links only by replying to first link or file:</b>"
+        help_msg += "\n\n<b>𝕄𝕦𝕝𝕥𝕚 𝕝𝕚𝕟𝕜𝕤 𝕠𝕟𝕝𝕪 𝕓𝕪 𝕣𝕖𝕡𝕝𝕪𝕚𝕟𝕘 𝕥𝕠 𝕗𝕚𝕣𝕤𝕥 𝕝𝕚𝕟𝕜 𝕠𝕣 𝕗𝕚𝕝𝕖:</b>"
         help_msg += "\n<code>/command</code> 10(number of links/files)"
         return sendMessage(help_msg, bot, message)
 
