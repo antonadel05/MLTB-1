@@ -70,7 +70,7 @@ def start(update, context):
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
-This bot can mirror all your links to Google Drive!
+𝕋𝕙𝕚𝕤 𝕓𝕠𝕥 𝕔𝕒𝕟 𝕞𝕚𝕣𝕣𝕠𝕣 𝕒𝕝𝕝 𝕪𝕠𝕦𝕣 𝕝𝕚𝕟𝕜𝕤 𝕥𝕠 𝔾𝕠𝕠𝕘𝕝𝕖 𝔻𝕣𝕚𝕧𝕖!
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
         sendMarkup(start_string, context.bot, update.message, reply_markup)
