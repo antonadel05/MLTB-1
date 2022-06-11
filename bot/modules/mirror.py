@@ -200,7 +200,7 @@ class MirrorListener:
             msg += f'\n<b>𝕋𝕠𝕥𝕒𝕝 𝔽𝕚𝕝𝕖𝕤👉: </b>{folders}'
             if typ != 0:
                 msg += f'\n<b>Corrupted Files: </b>{typ}'
-            msg += f'\n<b>𝕐𝕠𝕦𝕣 𝔻𝕠𝕨𝕟𝕝𝕠𝕒𝕕 𝕀𝕤 𝔻𝕠𝕟𝕖 𝔹𝕣𝕠 ℂ𝕝𝕚𝕔𝕜 𝕋𝕙𝕖 𝕃𝕚𝕟𝕜 𝔸𝕟𝕕 𝕊𝕦𝕡𝕡𝕠𝕣𝕥 𝕄𝕖 🖤 𝕌𝕡𝕝𝕠𝕒𝕕𝕖𝕕 𝔹𝕪 @seriesflixxx: </b>{self.tag}\n\n'
+            msg += f'\n<b>𝕐𝕠𝕦𝕣 𝕃𝕖𝕖𝕔𝕙𝕚𝕟𝕘 𝕀𝕤 𝔻𝕠𝕟𝕖 𝔹𝕣𝕠 🖤 𝕌𝕡𝕝𝕠𝕒𝕕𝕖𝕕 𝔹𝕪 @seriesflixxx: </b>{self.tag}\n\n'
             if not files:
                 sendMessage(msg, self.bot, self.message)
             else:
